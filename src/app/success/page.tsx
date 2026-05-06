@@ -2,7 +2,7 @@ export default function Success() {
     return (
       <main className="min-h-screen flex flex-col items-center justify-center text-center px-6">
   
-        <h1 className="text-4xl font-semibold mb-6">
+        <h1 className="text-4xl mb-6">
           You're on the list.
         </h1>
   
