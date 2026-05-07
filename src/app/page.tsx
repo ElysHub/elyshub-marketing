@@ -1,6 +1,14 @@
+import { Fragment } from "react";
 import { cssVar } from "@/lib/design-tokens";
 
 const tallyUrl = "https://tally.so/r/7R4X82";
+
+const audienceLabels = [
+  "Farmers",
+  "Hobbyists",
+  "First-time gardeners",
+  "For scientists",
+] as const;
 
 export default function Home() {
   return (
@@ -20,7 +28,9 @@ export default function Home() {
               height={36}
               className="h-9 w-9 shrink-0"
             />
-            <span className="text-lg font-semibold tracking-tight">ElysHub</span>
+            <span className="font-serif text-lg font-normal tracking-tight">
+              ElysHub
+            </span>
           </a>
 
           <a
@@ -36,8 +46,16 @@ export default function Home() {
 
       {/* HERO */}
       <section className="bg-elys-hero px-6 py-16">
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto pt-10">
-          <h1 className="text-5xl md:text-6xl leading-tight mb-6">
+        <div className="mx-auto flex max-w-3xl flex-col items-center pt-10 text-center">
+          <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-elys-primary bg-transparent px-4 py-2 font-sans text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-elys-text md:text-xs">
+            <span
+              className="size-2 shrink-0 rounded-full bg-elys-primary"
+              aria-hidden
+            />
+            <span>Now welcoming early growers</span>
+          </p>
+
+          <h1 className="mb-6 text-5xl leading-tight md:text-6xl">
             Understand{" "}
             <span className="italic" style={{ color: cssVar.primary }}>
               your plants
@@ -80,6 +98,28 @@ export default function Home() {
           >
             Get early access
           </a>
+        </div>
+      </section>
+
+      {/* AUDIENCE STRIP */}
+      <section
+        className="border-y border-elys-transition-green bg-elys-hero px-6 py-3.5"
+        aria-label="Audiences ElysHub serves"
+      >
+        <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-x-2 gap-y-2 text-center font-sans text-[0.65rem] font-medium uppercase tracking-[0.14em] text-elys-muted md:text-xs">
+          {audienceLabels.map((label, i) => (
+            <Fragment key={label}>
+              {i > 0 ? (
+                <span
+                  className="select-none text-elys-muted/45"
+                  aria-hidden
+                >
+                  •
+                </span>
+              ) : null}
+              <span>{label}</span>
+            </Fragment>
+          ))}
         </div>
       </section>
 

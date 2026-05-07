@@ -9,9 +9,10 @@
   --elys-primary-ring: #004d3a;
   --elys-hero: #c7e2c4;
   --elys-page: #f7f8f5;
-  --elys-text: #111111;
+  --elys-text: #241c1c;
   --elys-muted: #5f6b63;
   --elys-border: #d8ddd8;
+  --elys-transition-green: #97c992;
 }
 
 @theme inline {
@@ -24,6 +25,7 @@
   --color-elys-text: var(--elys-text);
   --color-elys-muted: var(--elys-muted);
   --color-elys-border: var(--elys-border);
+  --color-elys-transition-green: var(--elys-transition-green);
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-dm-serif-display), ui-serif, Georgia, serif;
 }
