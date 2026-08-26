@@ -16,6 +16,10 @@ export const cssVar = {
   statusPlanned: "var(--elys-status-planned)",
   statusVision: "var(--elys-status-vision)",
   statusGap: "var(--elys-status-gap)",
+  accentMoisture: "var(--accent-moisture)",
+  accentMoistureStrong: "var(--accent-moisture-strong)",
+  backgroundMoisture: "var(--background-moisture)",
+  backgroundMoistureStrong: "var(--background-moisture-strong)",
 } as const;
 
 export type ElysColorToken = keyof typeof cssVar;

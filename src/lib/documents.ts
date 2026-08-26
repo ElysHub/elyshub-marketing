@@ -1,3 +1,5 @@
+import type { EngineSlug } from "@/lib/engine-themes";
+
 export type DocStatus = "Live" | "Planned" | "Vision" | "Gap";
 
 export interface DocFeature {
@@ -19,6 +21,7 @@ export interface DocStage {
 export interface DocumentDef {
   slug: string;
   navLabel: string;
+  engine: EngineSlug;
   eyebrow: string;
   title: string;
   lastUpdated: string;
@@ -38,6 +41,7 @@ export const documents: DocumentDef[] = [
   {
     slug: "moisture",
     navLabel: "Moisture",
+    engine: "moisture",
     eyebrow: "Product truth · stakeholder overview",
     title: "Moisture",
     lastUpdated: "2026-08-22",
