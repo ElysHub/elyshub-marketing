@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { cssVar } from "@/lib/design-tokens";
-
-const tallyUrl = "https://tally.so/r/7R4X82";
+import SiteHeader, { tallyUrl } from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
 
 const audienceLabels = [
   "Farmers",
@@ -14,35 +14,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-elys-page text-elys-text">
 
-      {/* NAV */}
-      <header className="border-b border-elys-border bg-elys-page">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
-          <a
-            href="/"
-            className="flex items-center gap-3 text-elys-text transition hover:opacity-80"
-          >
-            <img
-              src="/icon.png"
-              alt=""
-              width={36}
-              height={36}
-              className="h-9 w-9 shrink-0"
-            />
-            <span className="font-serif text-lg font-normal tracking-tight">
-              ElysHub
-            </span>
-          </a>
-
-          <a
-            href={tallyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block shrink-0 rounded-full border-2 border-elys-primary bg-transparent px-5 py-2 text-sm font-medium text-elys-primary transition hover:bg-elys-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-elys-primary focus-visible:ring-offset-2 focus-visible:ring-offset-elys-page"
-          >
-            Get early access
-          </a>
-        </div>
-      </header>
+      <SiteHeader />
 
       {/* HERO */}
       <section className="bg-elys-hero px-6 py-16">
@@ -181,59 +153,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="mx-auto mt-32 max-w-5xl border-t border-elys-border px-6 pb-16 pt-10">
-
-        <div className="flex flex-col items-center justify-between gap-6 text-sm text-elys-muted md:flex-row">
-
-          <div>
-            Contact:{" "}
-            <a
-              href="mailto:elyshub.team@gmail.com"
-              className="transition hover:text-elys-text"
-            >
-              elyshub.team@gmail.com
-            </a>
-          </div>
-
-          <div className="flex gap-6">
-
-            <a
-              href="https://www.facebook.com/profile.php?id=61585837850448"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition hover:text-elys-text"
-            >
-              Facebook
-            </a>
-
-            <a
-              href="https://www.linkedin.com/company/elyshub"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition hover:text-elys-text"
-            >
-              LinkedIn
-            </a>
-
-            <a
-              href="https://www.reddit.com/user/Far-Plant-9223/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition hover:text-elys-text"
-            >
-              Reddit
-            </a>
-
-          </div>
-
-        </div>
-
-        <p className="mt-10 text-center text-sm text-elys-muted">
-          © {new Date().getFullYear()} ElysHub, LLC. All rights reserved.
-        </p>
-
-      </footer>
+      <SiteFooter />
 
     </main>
   );

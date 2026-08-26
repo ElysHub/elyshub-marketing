@@ -13,6 +13,12 @@
   --elys-muted: #5f6b63;
   --elys-border: #d8ddd8;
   --elys-transition-green: #97c992;
+
+  /* Document status tags */
+  --elys-status-live: #0f7f5f;
+  --elys-status-planned: #5f6b63;
+  --elys-status-vision: #96a39c;
+  --elys-status-gap: #b5532e;
 }
 
 @theme inline {
@@ -26,6 +32,10 @@
   --color-elys-muted: var(--elys-muted);
   --color-elys-border: var(--elys-border);
   --color-elys-transition-green: var(--elys-transition-green);
+  --color-elys-status-live: var(--elys-status-live);
+  --color-elys-status-planned: var(--elys-status-planned);
+  --color-elys-status-vision: var(--elys-status-vision);
+  --color-elys-status-gap: var(--elys-status-gap);
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-dm-serif-display), ui-serif, Georgia, serif;
 }

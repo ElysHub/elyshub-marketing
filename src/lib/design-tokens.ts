@@ -12,6 +12,10 @@ export const cssVar = {
   muted: "var(--elys-muted)",
   border: "var(--elys-border)",
   transitionGreen: "var(--elys-transition-green)",
+  statusLive: "var(--elys-status-live)",
+  statusPlanned: "var(--elys-status-planned)",
+  statusVision: "var(--elys-status-vision)",
+  statusGap: "var(--elys-status-gap)",
 } as const;
 
 export type ElysColorToken = keyof typeof cssVar;

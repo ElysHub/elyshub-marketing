@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { margin: 0; background: #241C1C; }
+    a { color: #34b892; text-decoration: none; }
+    a:hover { color: #7fd3ba; }
+    .rule { background: linear-gradient(to right, rgba(233,233,237,0.13), rgba(233,233,237,0.13) calc(100% - 48px), transparent) no-repeat bottom / 100% 1px; }
+  </style>
+</helmet>
+<div class="w-full bg-[#241C1C] text-[#F1EAE6] font-['Inter',system-ui,sans-serif] antialiased">
+
+  <section class="w-full bg-[#241C1C] bg-[radial-gradient(120%_140%_at_10%_0%,#332826_0%,#241C1C_60%,#1C1615_100%)]">
+    <div class="mx-auto w-full max-w-[1200px] px-6 sm:px-10 py-14 sm:py-20 flex flex-col gap-10">
+
+      <div class="flex flex-col gap-5">
+        <div class="flex flex-wrap items-baseline justify-between gap-2">
+          <div class="text-[11px] tracking-[0.14em] uppercase font-medium text-[#7fd3ba]">Product truth · stakeholder overview</div>
+          <div class="text-[11px] text-[#F1EAE6]/50">Last updated 2026-08-22</div>
+        </div>
+        <h1 class="m-0 text-5xl sm:text-6xl font-medium tracking-[-0.02em] leading-none">Moisture</h1>
+        <p class="m-0 text-lg sm:text-xl leading-[1.45] text-[#F1EAE6]/90 text-pretty">
+          Help growers keep plants in a healthy moisture range, with or without a sensor, by replacing watering guesswork with plant-, soil-, and environment-aware guidance <em>before</em> visible stress or overwatering damage.
+        </p>
+        <div class="border-l-2 border-l-[#0f7f5f] pl-5 py-1 flex flex-col gap-2.5">
+          <div class="text-[10px] tracking-[0.1em] uppercase text-[#7fd3ba]">Useful without a sensor, stronger with one</div>
+          <div class="text-[15px] sm:text-base leading-[1.5] text-[#F1EAE6]/90 text-pretty">You do not need expensive hardware to get useful moisture guidance. ElysHub estimates plant moisture from what it knows; a sensor upgrades confidence and precision.</div>
+        </div>
+        <div class="flex flex-wrap gap-2.5">
+          <sc-for list="{{ pills }}" as="pill" hint-placeholder-count="3">
+            <div class="text-[11px] sm:text-xs leading-none py-2.5 px-4 rounded-full border border-[#34b892]/60 text-[#7fd3ba]">{{ pill }}</div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="rounded-lg bg-[#F1EAE6]/[0.05] border border-[#F1EAE6]/[0.07] p-5 flex flex-col gap-2">
+          <div class="flex items-center gap-2 text-[10px] tracking-[0.1em] uppercase text-[#7fd3ba]">
+            <svg class="flex-none w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 20a6 6 0 0 0-12 0"></path><circle cx="12" cy="10" r="4"></circle><circle cx="12" cy="12" r="10"></circle></svg>
+            <span>Who</span>
+          </div>
+          <div class="text-[13.5px] leading-[1.5] text-[#F1EAE6]/85">Small-scale farmers and experienced growers who need better watering decisions than habit, surface-soil checks, or visible plant stress. Hoses, drip, greenhouse or sensors — hardware is not required.</div>
+        </div>
+        <div class="rounded-lg bg-[#F1EAE6]/[0.05] border border-[#F1EAE6]/[0.07] p-5 flex flex-col gap-2">
+          <div class="text-[10px] tracking-[0.1em] uppercase text-[#7fd3ba]">Action unit</div>
+          <div class="text-[13.5px] leading-[1.5] text-[#F1EAE6]/85">The plot is the default watering decision — plants in a plot are normally managed together. A plant-level exception is only for a plant that materially needs different treatment.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="w-full bg-[#c7e2c4]">
+    <div class="mx-auto w-full max-w-[1200px] px-6 sm:px-10 py-12 sm:py-16 flex flex-col gap-7">
+
+      <div class="flex flex-wrap items-baseline justify-between gap-2">
+        <h2 class="m-0 text-2xl font-medium text-[#241C1C]">Capability map</h2>
+        <div class="flex flex-wrap items-center gap-2">
+          <sc-for list="{{ stages }}" as="s" hint-placeholder-count="5">
+            <div class="flex items-center gap-2">
+              <div class="text-[11px] leading-none py-2 px-3.5 rounded-full bg-[#0f7f5f] text-[#eaf4e8]"><span class="text-[#eaf4e8]/70">{{ s.id }}</span>&nbsp; {{ s.label }}</div>
+              <span class="text-[11px] text-[#241C1C]/40">{{ s.arrow }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div class="columns-1 md:columns-2 gap-5 [column-fill:balance]">
+        <sc-for list="{{ capabilities }}" as="cap" hint-placeholder-count="5">
+          <div class="break-inside-avoid mb-5 rounded-lg bg-[#eaf4e8] border border-[#241C1C]/10 p-5 flex flex-col gap-2.5">
+            <div class="flex items-center gap-3">
+              <div class="flex-none w-[34px] h-[34px] rounded-full bg-[#0f7f5f] text-[#eaf4e8] flex items-center justify-center text-[12.5px] font-medium">{{ cap.id }}</div>
+              <div class="flex-1 text-[17px] font-medium leading-tight text-[#241C1C]">{{ cap.name }}</div>
+              <div class="flex-none text-xs text-[#241C1C]/55">— / 10</div>
+            </div>
+            <div class="flex flex-col">
+              <sc-for list="{{ cap.features }}" as="f" hint-placeholder-count="4">
+                <div class="flex items-baseline gap-4 py-2">
+                  <div class="flex-none w-1 h-1 mt-[7px] rounded-full bg-[#0f7f5f]/70"></div>
+                  <div class="flex-1 text-[13.5px] leading-[1.4] {{ f.nameColor }}">{{ f.name }}</div>
+                  <div class="flex-none text-[10.5px] tracking-[0.06em] text-right {{ f.fg }}">{{ f.status }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-between gap-2 text-[10.5px] text-[#241C1C]/60 pt-2">
+        <div><em>Is it working?</em>&nbsp;is a 1–10 research score, blank until the first round</div>
+        <div>Moisture · ElysHub</div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const S = {
+  Live:    { status: 'LIVE',    fg: 'text-[#0f7f5f]',      nameColor: 'text-[#241C1C]/90' },
+  Planned: { status: 'PLANNED', fg: 'text-[#241C1C]/75',   nameColor: 'text-[#241C1C]/80' },
+  Vision:  { status: 'VISION',  fg: 'text-[#241C1C]/70',   nameColor: 'text-[#241C1C]/75' },
+  Gap:     { status: 'GAP',     fg: 'text-[#1a9b76]',      nameColor: 'text-[#241C1C]/80' },
+};
+const f = (k, name) => ({ ...S[k], name });
+const withRules = (list) => list.map((x, i) => ({ ...x, rule: i === list.length - 1 ? '' : 'rule' }));
+
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      stages: [
+        { id: 'C1', label: 'Setup', arrow: '→' },
+        { id: 'C2', label: 'Know', arrow: '→' },
+        { id: 'C3', label: 'Estimate', arrow: '→' },
+        { id: 'C4', label: 'Trust', arrow: '→' },
+        { id: 'C5', label: 'Monitor', arrow: '' },
+      ],
+      pills: [
+        'A decision engine, not a sensor dashboard',
+        'Water conservation is an outcome, not the headline',
+        'Sensor-optional monitoring is an enabling capability',
+      ],
+      capabilities: [
+        { id: 'C1', name: 'Act through watering', features: withRules([
+          f('Live', 'Watering method — how this plot waters, with change history'),
+          f('Live', 'Record a watering as a plot action, with duration, vessel or runoff'),
+          f('Live', 'Starting point (anchor) — last watering, or enough rain'),
+          f('Planned', 'How much / how long guidance in the grower UI'),
+          f('Planned', 'Isolate one plant from a shared plot watering'),
+          f('Vision', 'Automatic watering schedule'),
+        ])},
+        { id: 'C2', name: 'Know current moisture', features: withRules([
+          f('Live', 'Five-zone water cycle — Water / Wet / Comfort / Dry / Stress'),
+          f('Live', 'Current reading and freshness — Sensor, Estimated or Waiting'),
+          f('Gap', 'Plot vs plant picture — mixed-plot overview not built'),
+          f('Gap', 'Sensor readings and estimates share one zone bar'),
+        ])},
+        { id: 'C3', name: 'Estimate when measurement is unavailable', features: withRules([
+          f('Live', 'Weather-based estimate from the last known water in the soil'),
+          f('Live', 'Plot and plant context — thirst, soil, weather protection'),
+          f('Live', 'Device handoff — estimate continues from last measured value'),
+        ])},
+        { id: 'C4', name: 'Trust the interpretation', features: withRules([
+          f('Live', 'Overall confidence on the estimate — never sensor-level certainty'),
+          f('Live', 'Per-input quality — anchor, weather, plant, soil, protection'),
+          f('Live', 'Why this number — rain, evaporation, net change, last sensor'),
+          f('Vision', 'Grower-visible leaching / drainage guidance'),
+        ])},
+        { id: 'C5', name: 'Monitor risk and history', features: withRules([
+          f('Live', 'Duration-based alerts — too dry, waterlogged, too wet too long'),
+          f('Live', 'Care Center cards — moisture alerts in care / journal'),
+          f('Live', 'History graph — ~10 days of estimated moisture with zone bands'),
+          f('Live', 'Event log — zone changes, watering, alerts'),
+          f('Planned', 'Alert acknowledgement'),
+          f('Gap', 'Alert timing differs when plant thresholds are missing'),
+        ])},
+      ],
+    };
+  }
+}
+
+</script>
+</body>
+</html>
