@@ -8,14 +8,7 @@ export default function DocumentsSideNav() {
   const pathname = usePathname();
 
   return (
-    <nav
-      aria-label="Documents"
-      className="w-full shrink-0 overflow-y-auto md:sticky md:w-56 md:self-start"
-      style={{
-        top: "var(--header-height, 73px)",
-        maxHeight: "calc(100vh - var(--header-height, 73px))",
-      }}
-    >
+    <nav aria-label="Documents" className="w-full shrink-0 md:w-56">
       <p className="mb-3 px-3 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-elys-muted">
         Documents
       </p>
