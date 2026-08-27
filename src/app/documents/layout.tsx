@@ -13,7 +13,7 @@ export default function DocumentsLayout({
 
       <div className="flex flex-col md:flex-row">
         <aside className="shrink-0 md:w-64">
-          <div className="px-6 py-6 md:sticky md:top-[var(--header-height,73px)] md:max-h-[calc(100vh-var(--header-height,73px))] md:overflow-y-auto md:overscroll-y-contain md:py-10">
+          <div className="px-6 py-6 md:sticky md:top-[var(--header-height,73px)] md:max-h-[calc(100vh-var(--header-height,73px))] md:overflow-x-hidden md:overflow-y-auto md:overscroll-y-contain md:py-10">
             <DocumentsSideNav />
           </div>
         </aside>
