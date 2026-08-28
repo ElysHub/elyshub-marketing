@@ -17,6 +17,10 @@
 /.next/
 /out/
 
+# generated at build time (predev/prebuild) from content/documents/*.yaml — see
+# scripts/generate-documents.mjs. Not the source of truth; do not hand-edit or commit.
+/src/lib/documents.generated.json
+
 # production
 /build
 

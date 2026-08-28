@@ -1,0 +1,179 @@
+# Public projection of MOISTURE-PRODUCT-TRUTH.md for the elyshub.com marketing site.
+#
+# Every field here is sourced from an explicit line in MOISTURE-PRODUCT-TRUTH.md — front
+# matter, "Public:" lines, value pills, context cards, the capability map table, and each
+# feature's maturity/state. Nothing here is invented; nothing here should be edited directly —
+# edit Product Truth, then re-derive this file. Hand-authored for now (Slice 1 pilot); see
+# plans/Product-Truth-To-Public-Pipeline-Tracker.md.
+#
+# Canonical copy: this file. The marketing repo (elyshub-marketing) holds a manually-copied
+# duplicate that the page actually renders from — see the tracker for why that copy is manual
+# for now (Slice 4 removes the manual step, not in scope yet).
+#
+# Schema: elyshub-marketing/src/lib/documents.ts (DocumentDef / HeroSection / CapabilityMapSection)
+
+slug: moisture
+navLabel: Moisture
+engine: moisture
+
+sections:
+  - type: hero
+    id: hero
+    # Not engine-specific product content — a shared marketing-page label, not sourced from
+    # Product Truth.
+    eyebrow: "Product truth · stakeholder overview"
+    # Source: MOISTURE-PRODUCT-TRUTH.md front matter (title) / doc "Last updated" line.
+    last_updated: "2026-08-22"
+    title: "Moisture"
+    # Source: MOISTURE-PRODUCT-TRUTH.md §0 "One job." (verbatim, 1:1 — no Public: line needed).
+    job_statement: >-
+      Help growers keep plants in a healthy moisture range, with or without a sensor, by
+      replacing watering guesswork with plant-, soil-, and environment-aware guidance before
+      visible stress or overwatering damage.
+    support_statement:
+      # Source: §0 "Hero story." line (mechanical punctuation edit only).
+      label: "Useful without a sensor, stronger with one"
+      # Source: §0 hero blockquote (verbatim, 1:1).
+      text: >-
+        You do not need expensive hardware to get useful moisture guidance. ElysHub estimates
+        plant moisture from what it knows; a sensor upgrades confidence and precision.
+    # Source: §0 "Value pills (public)" list (verbatim).
+    value_pills:
+      - "A decision engine, not a sensor dashboard"
+      - "Water conservation is an outcome, not the headline"
+      - "Sensor-optional monitoring is an enabling capability"
+    # Source: §1 "Context cards (public)" table (verbatim).
+    context_cards:
+      - id: audience
+        label: "Who"
+        text: >-
+          Small-scale farmers and experienced growers who need better watering decisions than
+          habit, surface-soil checks, or visible plant stress. Hoses, drip, greenhouse or
+          sensors — hardware is not required.
+      - id: action_unit
+        label: "Action unit"
+        text: >-
+          The plot is the default watering decision — plants in a plot are normally managed
+          together. A plant-level exception is only for a plant that materially needs different
+          treatment.
+
+  - type: capability_map
+    id: capability_map
+    title: "Capability map"
+    # Source: §3 Journey line (Cn-annotated).
+    journey:
+      - id: C1
+        label: Setup
+      - id: C2
+        label: Know
+      - id: C3
+        label: Estimate
+      - id: C4
+        label: Trust
+      - id: C5
+        label: Monitor
+    capabilities:
+      - id: C1
+        name: "Act through watering"
+        # Source: §3 capability map table, C1 row (Research status / Score / Basis).
+        research:
+          status: pending
+          score: null
+        items:
+          # Source: C1 "Watering method" feature — Public: line.
+          - state: live
+            text: "Watering method — how this plot waters, with change history"
+          # Source: C1 "Record a watering" feature — Public: line.
+          - state: live
+            text: "Record a watering as a plot action, with duration, vessel or runoff"
+          # Source: C1 "Starting point (anchor)" feature — Public: line.
+          - state: live
+            text: "Starting point (anchor) — last watering, or enough rain"
+          # Source: C1 "How much / how long guidance" feature — Public: line.
+          - state: planned
+            text: "How much / how long guidance in the grower UI"
+          # Source: C1 "Isolate one plant from shared plot watering" feature — Public: line.
+          - state: planned
+            text: "Isolate one plant from a shared plot watering"
+          # Source: C1 "Automatic watering schedule" feature heading (reused as-is, exact match).
+          - state: vision
+            text: "Automatic watering schedule"
+
+      - id: C2
+        name: "Know current moisture"
+        research:
+          status: pending
+          score: null
+        items:
+          # Source: C2 "Five-zone water cycle" feature — Public: line.
+          - state: live
+            text: "Five-zone water cycle — Water / Wet / Comfort / Dry / Stress"
+          # Source: C2 "Current reading and freshness" feature — Public: line.
+          - state: live
+            text: "Current reading and freshness — Sensor, Estimated or Waiting"
+          # Source: C2 "Plot vs plant zone overview" feature — Public: line.
+          - state: partial
+            text: "Plot vs plant zone overview — genuine plot-level average, mixed view not built"
+          # Source: C2 "Gap." paragraph — Public: line.
+          - state: gap
+            text: "Sensor readings and estimates share one zone bar"
+
+      - id: C3
+        name: "Estimate when measurement is unavailable"
+        research:
+          status: pending
+          score: null
+        items:
+          # Source: C3 "Weather-based estimate" feature — Public: line.
+          - state: live
+            text: "Weather-based estimate from the last known water in the soil"
+          # Source: C3 "Plot and plant context" feature — Public: line.
+          - state: live
+            text: "Plot and plant context — thirst, soil, weather protection"
+          # Source: C3 "Device handoff" feature — Public: line.
+          - state: live
+            text: "Device handoff — estimate continues from last measured value"
+
+      - id: C4
+        name: "Trust the interpretation"
+        research:
+          status: pending
+          score: null
+        items:
+          # Source: C4 "Overall confidence" feature — Public: line.
+          - state: live
+            text: "Overall confidence on the estimate — never sensor-level certainty"
+          # Source: C4 "Per-input quality" feature — Public: line.
+          - state: live
+            text: "Per-input quality — anchor, weather, plant, soil, protection"
+          # Source: C4 "Why this number" feature — Public: line.
+          - state: live
+            text: "Why this number — rain, evaporation, net change, last sensor"
+          # Source: C4 "Grower-visible leaching / drainage guidance" heading (reused as-is).
+          - state: vision
+            text: "Grower-visible leaching / drainage guidance"
+
+      - id: C5
+        name: "Monitor risk and history"
+        research:
+          status: pending
+          score: null
+        items:
+          # Source: C5 "Duration-based alerts" feature — Public: line.
+          - state: live
+            text: "Duration-based alerts — too dry, waterlogged, too wet too long"
+          # Source: C5 "Care Center cards" feature — Public: line.
+          - state: live
+            text: "Care Center cards — moisture alerts in care / journal"
+          # Source: C5 "History graph" feature — Public: line.
+          - state: live
+            text: "History graph — ~10 days of estimated moisture with zone bands"
+          # Source: C5 "Event log" feature — Public: line.
+          - state: live
+            text: "Event log — zone changes, watering, alerts"
+          # Source: C5 "Alert acknowledgement" feature heading (reused as-is).
+          - state: planned
+            text: "Alert acknowledgement"
+          # Source: C5 "Gap." paragraph — Public: line.
+          - state: gap
+            text: "Alert timing differs when plant thresholds are missing"
