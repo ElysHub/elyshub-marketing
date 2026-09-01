@@ -1,0 +1,157 @@
+# Public projection of SOIL-PRODUCT-TRUTH.md for the elyshub.com marketing site.
+#
+# Every field here is sourced from an explicit line in SOIL-PRODUCT-TRUTH.md — front matter,
+# "Public:" lines, value pills, context cards, the capability map table, and each feature's
+# maturity/state. Nothing here is invented; nothing here should be edited directly — edit
+# Product Truth, then re-derive this file. Hand-authored (Slice 2 of the pipeline piloted on
+# Moisture); see ../../docs/PRODUCT-TRUTH-FRAMEWORK.md and ../../docs/Product-Truth-To-Public-Pipeline-Tracker.md.
+#
+# Canonical copy: this file. The marketing repo (elyshub-marketing) holds a manually-copied
+# duplicate that the page actually renders from — see the Moisture tracker for why that copy
+# is manual for now (Slice 4 removes the manual step, not in scope yet).
+#
+# Schema: elyshub-marketing/src/lib/documents.ts (DocumentDef / HeroSection / CapabilityMapSection)
+
+slug: soil
+navLabel: Soil
+engine: soil
+
+sections:
+  - type: hero
+    id: hero
+    # Not engine-specific product content — a shared marketing-page label, not sourced from
+    # Product Truth.
+    eyebrow: "Product truth · stakeholder overview"
+    # Source: SOIL-PRODUCT-TRUTH.md front matter (title) / doc "Last updated" line.
+    last_updated: "2026-09-01"
+    title: "Soil"
+    # Source: SOIL-PRODUCT-TRUTH.md §0 "One job." (verbatim, 1:1 — no Public: line needed).
+    job_statement: >-
+      Help growers know what's actually happening in their soil — nutrients and pH — without
+      needing a lab test every time, so they can act before a plant shows deficiency or
+      toxicity stress.
+    support_statement:
+      # Source: §0 "Hero story." line (mechanical punctuation edit only, ";" -> ",").
+      label: "Useful without a lab test, more precise with one"
+      # Source: §0 hero blockquote (verbatim, 1:1).
+      text: >-
+        You do not need a lab test to get a sense of your soil's nutrients and pH. ElysHub
+        estimates soil state from what it knows about your bed; a manual test entry upgrades
+        confidence and precision immediately.
+    # Source: §0 "Value pills (public)" list (verbatim).
+    value_pills:
+      - "A decision-support layer, not a lab replacement"
+      - "Describe your bed once, benefit continuously"
+      - "Manual test entry always wins when you have one"
+    # Source: §1 "Context cards (public)" table (verbatim).
+    context_cards:
+      - id: audience
+        label: "Who"
+        text: >-
+          Growers who want to know their soil's nutrient and pH state without a lab test
+          every season.
+      - id: action_unit
+        label: "Action unit"
+        text: >-
+          Soil state works at the plot or the individual plant level — both are fully
+          supported, not a default with an override.
+
+  - type: capability_map
+    id: capability_map
+    title: "Capability map"
+    # Source: §3 Journey line (Cn-annotated).
+    journey:
+      - id: C1
+        label: Describe
+      - id: C2
+        label: Know
+      - id: C3
+        label: Estimate
+      - id: C4
+        label: Trust
+      - id: C5
+        label: Monitor
+    capabilities:
+      - id: C1
+        name: "Describe your soil"
+        # Source: §3 capability map table, C1 row (Research status / Score / Basis).
+        research:
+          status: pending
+          score: null
+        items:
+          # Source: C1 "Manual soil test entry" feature — Public: line.
+          - state: live
+            text: "Manual soil test entry — from a home kit, meter, or lab report"
+          # Source: C1 "Describe your growing bed" feature — Public: line.
+          - state: live
+            text: "Describe your growing bed — structure, layers, materials"
+          # Source: C1 "Growing media recipe generation" feature heading (reused as-is, exact match).
+          - state: planned
+            text: "Growing media recipe generation"
+
+      - id: C2
+        name: "Know current soil state"
+        research:
+          status: pending
+          score: null
+        items:
+          # Source: C2 "pH zone bar" feature — Public: line.
+          - state: live
+            text: "pH zone bar — always shown, even without a plant-specific target"
+          # Source: C2 "NPK zone bars" feature — Public: line.
+          - state: partial
+            text: "NPK zone bars — nitrogen, phosphorus, potassium, each against a plant-specific target"
+          # Source: C2 "Freshness" feature — Public: line.
+          - state: live
+            text: "Freshness — when the current reading was produced"
+          # Source: C2 "Gap." paragraph — Public: line.
+          - state: gap
+            text: "pH always shows, NPK sometimes doesn't — same honesty logic, different look"
+
+      - id: C3
+        name: "Estimate without a lab test"
+        research:
+          status: pending
+          score: null
+        items:
+          # Source: C3 "System-default estimate" feature — Public: line.
+          - state: live
+            text: "System-default estimate — honest about having nothing to go on"
+          # Source: C3 "Composition-derived estimate" feature — Public: line.
+          - state: live
+            text: "Composition-derived estimate — from your bed's materials, no lab test needed"
+          # Source: C3 "Sensor mode" feature heading (reused as-is, exact match).
+          - state: vision
+            text: "Sensor mode"
+
+      - id: C4
+        name: "Trust the estimate"
+        research:
+          status: pending
+          score: null
+        items:
+          # Source: C4 "Confidence badge" feature — Public: line.
+          - state: live
+            text: "Confidence badge — reflects which tier produced the number"
+          # Source: C4 "What the estimate is based on" feature — Public: line.
+          - state: live
+            text: "What the estimate is based on — a short explanation, not a breakdown"
+          # Source: C4 "Gap." paragraph — Public: line.
+          - state: gap
+            text: "Confidence is one message, not a per-input breakdown"
+
+      - id: C5
+        name: "Monitor and get alerted"
+        research:
+          status: pending
+          score: null
+        items:
+          # Source: C5 "pH alerts" feature — Public: line.
+          - state: live
+            text: "pH alerts — critical at toxic ranges, warning near the edges"
+          # Source: C5 "NPK imbalance alert" feature — Public: line.
+          - state: live
+            text: "NPK imbalance alert — one alert, not one per nutrient"
+          # Source: C5 "Care Center cards" feature — Public: line.
+          - state: live
+            text: "Care Center cards — soil alerts in care / journal"

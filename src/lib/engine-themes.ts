@@ -50,15 +50,25 @@ const moisture: EngineTheme = {
   softBg: "bg-background-moisture",
 };
 
+const soil: EngineTheme = {
+  heroBg: "bg-accent-soil",
+  accentText: "text-background-soil",
+  accentBorder: "border-background-soil",
+  accentBorderSoft: "border-background-soil/60",
+  accentBg: "bg-accent-soil",
+  accentBgSoft: "bg-accent-soil/70",
+  softBg: "bg-background-soil",
+};
+
 export const engineThemes: Record<EngineSlug, EngineTheme> = {
   general,
   moisture,
+  soil,
   // Palettes not defined yet — fall back to the general theme until each
-  // engine gets its own primitives (temperature/red, pests/purple, soil/brown,
+  // engine gets its own primitives (temperature/red, pests/purple,
   // light/yellow-brown).
   temperature: general,
   pests: general,
-  soil: general,
   light: general,
 };
 

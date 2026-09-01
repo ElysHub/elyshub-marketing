@@ -31,6 +31,10 @@
   --moisture-blue-700: #3f7397;
   --moisture-blue-900: #1e3a8a;
 
+  /* Soil — brown */
+  --soil-brown-100: #e9dddc;
+  --soil-brown-700: #7a605d;
+
   /* ── Engine theme semantic aliases ──
      What components actually use: one accent + one soft background per engine. */
 
@@ -39,6 +43,12 @@
   --accent-moisture-strong: var(--moisture-blue-900);
   --background-moisture: var(--moisture-blue-100);
   --background-moisture-strong: var(--moisture-blue-300);
+
+  /* Soil */
+  --accent-soil: var(--soil-brown-700);
+  --accent-soil-strong: var(--soil-brown-700);
+  --background-soil: var(--soil-brown-100);
+  --background-soil-strong: var(--soil-brown-100);
 }
 
 @theme inline {
@@ -60,6 +70,10 @@
   --color-accent-moisture-strong: var(--accent-moisture-strong);
   --color-background-moisture: var(--background-moisture);
   --color-background-moisture-strong: var(--background-moisture-strong);
+  --color-accent-soil: var(--accent-soil);
+  --color-accent-soil-strong: var(--accent-soil-strong);
+  --color-background-soil: var(--background-soil);
+  --color-background-soil-strong: var(--background-soil-strong);
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-dm-serif-display), ui-serif, Georgia, serif;
 }
