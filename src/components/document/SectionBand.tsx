@@ -2,7 +2,7 @@ import type { EngineTheme } from "@/lib/engine-themes";
 
 interface SectionBandProps {
   theme: EngineTheme;
-  variant: "hero" | "soft";
+  variant: "hero" | "soft" | "page";
   children: React.ReactNode;
 }
 
@@ -11,7 +11,7 @@ export default function SectionBand({
   variant,
   children,
 }: SectionBandProps) {
-  const bg = variant === "hero" ? theme.heroBg : theme.softBg;
+  const bg = variant === "hero" ? theme.heroBg : variant === "soft" ? theme.softBg : "bg-elys-page";
 
   return (
     <section className={`w-full ${bg} ${variant === "hero" ? "text-elys-page" : ""}`}>

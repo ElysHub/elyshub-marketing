@@ -1,0 +1,78 @@
+# Public, grower-facing page for elyshub.com/learn/moisture.
+#
+# Informed by content/documents/moisture.yaml (internal Product Truth projection, gated at
+# /documents) but written at the benefit/outcome level for growers — no per-feature roadmap
+# state (live/planned/vision/gap) or research status. That detail stays internal; see
+# middleware.ts and src/lib/documents.ts for why.
+#
+# Schema: elyshub-marketing/src/lib/pages.ts (PublicPageDef / PublicPageSection)
+
+slug: moisture
+navLabel: Moisture
+engine: moisture
+
+sections:
+  - type: hero
+    id: hero
+    eyebrow: "Watering, made simple"
+    title: "Know when your plants actually need water"
+    tagline: "Stop guessing. Start knowing."
+    intro: >-
+      ElysHub replaces watering guesswork with clear, plain-language guidance — with or
+      without a soil sensor. You get a straightforward read on your plants' moisture, before
+      stress or overwatering ever shows up.
+
+  - type: benefits_grid
+    id: benefits
+    title: "Why growers use it"
+    benefits:
+      - title: "No sensor required"
+        text: >-
+          Get useful watering guidance from what ElysHub already knows about your plants,
+          soil, and local weather — a sensor makes it sharper, but it's optional.
+      - title: "Plain-language moisture zones"
+        text: >-
+          See exactly where your plants sit — from too dry to too wet — instead of a raw
+          number you have to interpret yourself.
+      - title: "Built for how you actually water"
+        text: >-
+          Log a watering in seconds. ElysHub uses it as the starting point for its next
+          guidance, so every entry makes the picture more accurate.
+      - title: "Know why, not just what"
+        text: >-
+          Every reading comes with a short, honest explanation of what it's based on — recent
+          rain, your last watering, or a live sensor.
+
+  - type: how_it_works
+    id: how_it_works
+    title: "How it works"
+    steps:
+      - title: "Tell us about your plot"
+        text: "A few basics about your plants and soil — done once, used every day after."
+      - title: "Water the way you already do"
+        text: "Log a watering, or let ElysHub estimate from rain and time since your last one."
+      - title: "Get a clear moisture read"
+        text: "See a simple zone — Dry, Comfort, Wet, and more — plus alerts if something needs attention."
+
+  - type: faq
+    id: faq
+    title: "Common questions"
+    items:
+      - question: "Do I need to buy a soil sensor?"
+        answer: >-
+          No. ElysHub gives you useful guidance without one. If you add a sensor later, your
+          guidance gets more precise automatically.
+      - question: "What if I water by hand, not on a schedule?"
+        answer: >-
+          That's what most growers do. Log a watering whenever it happens — ElysHub uses that
+          as its anchor point going forward.
+      - question: "Will it tell me exactly how much to water?"
+        answer: >-
+          Guidance on amount and timing is on the way. Today, ElysHub focuses on giving you an
+          honest read on current moisture and risk so you can decide with confidence.
+
+  - type: cta
+    id: cta
+    heading: "Ready to stop guessing?"
+    body: "Join the early growers using ElysHub to water with confidence."
+    buttonLabel: "Get early access"

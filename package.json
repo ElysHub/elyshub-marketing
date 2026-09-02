@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "generate:documents": "node scripts/generate-documents.mjs",
-    "predev": "npm run generate:documents",
-    "prebuild": "npm run generate:documents",
+    "generate:pages": "node scripts/generate-pages.mjs",
+    "predev": "npm run generate:documents && npm run generate:pages",
+    "prebuild": "npm run generate:documents && npm run generate:pages",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

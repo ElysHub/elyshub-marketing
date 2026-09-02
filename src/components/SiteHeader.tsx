@@ -6,9 +6,11 @@ import { useEffect, useRef } from "react";
 
 const tallyUrl = "https://tally.so/r/7R4X82";
 
+// /documents is an internal, access-controlled stakeholder viewer (see proxy.ts) —
+// intentionally not linked from public nav. /learn is the public, grower-facing counterpart.
 const navItems = [
   { href: "/", label: "Home" },
-  { href: "/documents", label: "Documents" },
+  { href: "/learn", label: "Learn" },
 ] as const;
 
 function isActive(pathname: string, href: string) {

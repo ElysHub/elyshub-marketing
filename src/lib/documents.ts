@@ -79,14 +79,10 @@ export interface DocumentDef {
 }
 
 /**
- * Slugs temporarily hidden from the public site (nav + routes both 404), without deleting
- * their YAML content — remove a slug here to re-publish it.
+ * Internal Product Truth / stakeholder viewer — access-controlled by proxy.ts
+ * (Basic Auth on /documents/*), not by filtering here. See proxy.ts for why.
  */
-const HIDDEN_SLUGS: string[] = ["soil", "fertilization"];
-
-export const documents = (generatedDocuments as unknown as DocumentDef[]).filter(
-  (doc) => !HIDDEN_SLUGS.includes(doc.slug)
-);
+export const documents = generatedDocuments as unknown as DocumentDef[];
 
 export function getDocument(slug: string): DocumentDef | undefined {
   return documents.find((doc) => doc.slug === slug);
