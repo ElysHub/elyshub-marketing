@@ -78,7 +78,15 @@ export interface DocumentDef {
   sections: DocumentSection[];
 }
 
-export const documents = generatedDocuments as unknown as DocumentDef[];
+/**
+ * Slugs temporarily hidden from the public site (nav + routes both 404), without deleting
+ * their YAML content — remove a slug here to re-publish it.
+ */
+const HIDDEN_SLUGS: string[] = ["soil", "fertilization"];
+
+export const documents = (generatedDocuments as unknown as DocumentDef[]).filter(
+  (doc) => !HIDDEN_SLUGS.includes(doc.slug)
+);
 
 export function getDocument(slug: string): DocumentDef | undefined {
   return documents.find((doc) => doc.slug === slug);
