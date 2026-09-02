@@ -21,9 +21,20 @@ const outFile = join(rootDir, "src", "lib", "documents.generated.json");
 
 const files = readdirSync(contentDir).filter((f) => f.endsWith(".yaml") || f.endsWith(".yml"));
 
+// Explicit nav order (Documents side nav / static params). Slugs not listed here fall back
+// to alphabetical order, appended after the ones listed.
+const NAV_ORDER = ["moisture", "soil", "fertilization"];
+
 const documents = files
   .map((file) => load(readFileSync(join(contentDir, file), "utf8")))
-  .sort((a, b) => basename(a.slug).localeCompare(basename(b.slug)));
+  .sort((a, b) => {
+    const aIndex = NAV_ORDER.indexOf(a.slug);
+    const bIndex = NAV_ORDER.indexOf(b.slug);
+    if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex;
+    if (aIndex !== -1) return -1;
+    if (bIndex !== -1) return 1;
+    return basename(a.slug).localeCompare(basename(b.slug));
+  });
 
 writeFileSync(outFile, JSON.stringify(documents, null, 2) + "\n");
 

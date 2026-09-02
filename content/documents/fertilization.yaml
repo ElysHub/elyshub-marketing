@@ -1,0 +1,154 @@
+# Public projection of FERTILIZER-ADVICE-PRODUCT-TRUTH.md for the elyshub.com marketing site.
+#
+# Every field here is sourced from an explicit line in FERTILIZER-ADVICE-PRODUCT-TRUTH.md — front
+# matter, "Public:" lines, value pills, context cards, the capability map table, and each
+# feature's maturity/state. Nothing here is invented; nothing here should be edited directly —
+# edit Product Truth, then re-derive this file. Hand-authored, reusing the pattern piloted on
+# Moisture and proven on Soil; see ../../docs/PRODUCT-TRUTH-FRAMEWORK.md and
+# ../../docs/Product-Truth-To-Public-Pipeline-Tracker.md.
+#
+# Canonical copy: this file. The marketing repo (elyshub-marketing) holds a manually-copied
+# duplicate that the page actually renders from — see the Moisture tracker for why that copy
+# is manual for now (Slice 4 removes the manual step, not in scope yet).
+#
+# Schema: elyshub-marketing/src/lib/documents.ts (DocumentDef / HeroSection / CapabilityMapSection)
+
+slug: fertilization
+navLabel: Fertilization
+engine: fertilization
+
+sections:
+  - type: hero
+    id: hero
+    # Not engine-specific product content — a shared marketing-page label, not sourced from
+    # Product Truth.
+    eyebrow: "Product truth · stakeholder overview"
+    # Source: FERTILIZER-ADVICE-PRODUCT-TRUTH.md front matter (title) / doc "Last updated" line.
+    last_updated: "2026-09-01"
+    title: "Fertilization"
+    # Source: §0 "One job." (verbatim, 1:1 — no Public: line needed).
+    job_statement: >-
+      Tell growers exactly what to fertilize, when to fertilize, how much to apply, and when to
+      check back — all based on their actual plant and soil, not a generic feeding schedule.
+    support_statement:
+      # Source: §0 "Hero story." line (verbatim, 1:1).
+      label: "The best scientifically justified answer, not the best-selling product"
+      # Source: §0 hero blockquote (verbatim, 1:1).
+      text: >-
+        The Advisor scores every product in the catalogue against your plant's actual need —
+        never just what happens to be in your cart or your shed. When it isn't sure, it says so
+        honestly, in two separate ways: how sure it is about what your plant needs, and how sure
+        it is about how much and which product.
+    # Source: §0 "Value pills (public)" list (verbatim).
+    value_pills:
+      - "Science-first, not inventory-first — the best product regardless of what's on the shelf"
+      - "A dose range, never a bare decimal that pretends to be more precise than it is"
+      - "One plan covers your whole bed — no per-plant guesswork on shared soil"
+    # Source: §1 "Context cards (public)" table (verbatim).
+    context_cards:
+      - id: audience
+        label: "Who"
+        text: >-
+          Growers who want a specific feeding answer for a specific plant, not a generic
+          schedule.
+      - id: action_unit
+        label: "Action unit"
+        text: >-
+          Advice is per plant, soft guidance. Applying it is a whole-plot action today —
+          scoping to one plant's own isolated soil is planned.
+
+  - type: capability_map
+    id: capability_map
+    title: "Capability map"
+    # Source: §3 Journey line (Cn-annotated).
+    journey:
+      - id: C1
+        label: Diagnose
+      - id: C2
+        label: Trust
+      - id: C3
+        label: Choose
+      - id: C4
+        label: Measure
+      - id: C5
+        label: Act
+    capabilities:
+      - id: C1
+        name: "Diagnose what a plant needs"
+        # Source: §3 capability map table, C1 row (Research status / Score / Basis).
+        research:
+          status: pending
+          score: null
+        items:
+          # Source: C1 "Recommendation routing" feature — Public: line.
+          - state: live
+            text: "One of five plain outcomes — apply, maintain, wait, monitor, or fix pH first"
+          # Source: C1 "pH advisory" feature — Public: line.
+          - state: live
+            text: "A plain-language note when your soil pH doesn't match this plant"
+          # Source: C1 "Gap." paragraph — Public: line.
+          - state: gap
+            text: "Multiple active products are accounted for behind the scenes, but not explained"
+
+      - id: C2
+        name: "Trust the recommendation"
+        research:
+          status: pending
+          score: null
+        items:
+          # Source: C2 "Two-dimension confidence" feature — Public: line.
+          - state: partial
+            text: "Two separate scores — how sure we are what's needed, and how sure we are how much"
+          # Source: C2 "Gap." paragraph — Public: line.
+          - state: gap
+            text: "Confidence is computed on every recommendation, not yet shown on today's card"
+
+      - id: C3
+        name: "Choose a product"
+        research:
+          status: pending
+          score: null
+        items:
+          # Source: C3 "Science-first ranked list" feature — Public: line.
+          - state: live
+            text: "A ranked list of the best products for your plant — never limited to what you own"
+          # Source: C3 "Plant-specific chemistry matching" feature — Public: line.
+          - state: live
+            text: "Matches your plant's chemistry, not just its NPK numbers"
+
+      - id: C4
+        name: "Know how much to apply"
+        research:
+          status: pending
+          score: null
+        items:
+          # Source: C4 "Kitchen-measure dose" feature — Public: line.
+          - state: live
+            text: "Dose in cups, tablespoons, and teaspoons — not lbs/sqft math"
+          # Source: C4 "Dose range, not a false-precision number" feature — Public: line.
+          - state: live
+            text: "A dose range, never a single decimal that implies more certainty than it has"
+          # Source: C4 "Gap." paragraph — Public: line.
+          - state: gap
+            text: "A few products don't have a kitchen-measure conversion yet"
+
+      - id: C5
+        name: "Act on it and track it"
+        research:
+          status: pending
+          score: null
+        items:
+          # Source: C5 "Fertilization plan" feature — Public: line.
+          - state: live
+            text: "Schedule a fertilization for your whole plot, then mark it done when you feed it"
+          # Source: C5 "Always-available product list" feature — Public: line.
+          - state: live
+            text: "You can always open \"Fertilize,\" even with no recommendation yet"
+          # Source: C5 "Care Center visibility" feature — Public: line.
+          - state: live
+            text: "Shows up where you already check on your plants"
+          # Source: C5 "Gap." paragraph — Public: line.
+          - state: gap
+            text: >-
+              Shared beds with more than one plant don't get a recommendation yet — single-plant
+              beds are unaffected

@@ -11,6 +11,7 @@ export type EngineSlug =
   | "temperature"
   | "pests"
   | "soil"
+  | "fertilization"
   | "light";
 
 export interface EngineTheme {
@@ -64,6 +65,9 @@ export const engineThemes: Record<EngineSlug, EngineTheme> = {
   general,
   moisture,
   soil,
+  // Reuses the Soil theme (brown) per instruction — no dedicated
+  // fertilization palette defined yet.
+  fertilization: soil,
   // Palettes not defined yet — fall back to the general theme until each
   // engine gets its own primitives (temperature/red, pests/purple,
   // light/yellow-brown).
